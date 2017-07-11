@@ -1,7 +1,7 @@
 FROM php:7.1-fpm-alpine
 MAINTAINER toshikish
 
-RUN apk --update add libmcrypt-dev && rm -rf /var/cache/apk/* && \
+RUN apk --update add libmcrypt-dev autoconf gcc libc-dev make pcre-dev && rm -rf /var/cache/apk/* && \
     docker-php-ext-install mbstring && \
     docker-php-ext-install mcrypt && \
     docker-php-ext-install pdo_mysql && \
