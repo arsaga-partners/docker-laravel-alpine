@@ -1,4 +1,4 @@
-FROM php:7.1-fpm-alpine
+FROM php:7.2-fpm-alpine
 MAINTAINER toshikish
 
 RUN apk --update add libmcrypt-dev autoconf gcc libc-dev make pcre-dev zip zlib-dev git && rm -rf /var/cache/apk/* && \
