@@ -6,8 +6,6 @@ RUN apk --update add libmcrypt-dev autoconf gcc libc-dev make pcre-dev zip zlib-
     docker-php-ext-install pcntl && \
     docker-php-ext-install pdo_mysql && \
     docker-php-ext-install opcache && \
-    apt-get install libzip-dev && \
-    docker-php-ext-install zip && \
     pecl install apcu && \
     echo "extension=apcu.so" > /usr/local/etc/php/conf.d/apcu.ini && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
