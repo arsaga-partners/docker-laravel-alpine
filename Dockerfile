@@ -1,5 +1,5 @@
-FROM php:7.1-fpm-alpine
-MAINTAINER shufo
+FROM php:7.3-fpm-alpine
+MAINTAINER yok
 
 RUN apk --update add libmcrypt-dev && rm -rf /var/cache/apk/* && \
     docker-php-ext-install mbstring && \
