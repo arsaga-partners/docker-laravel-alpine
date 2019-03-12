@@ -10,3 +10,7 @@ RUN apk --update add libmcrypt-dev autoconf gcc libc-dev make pcre-dev zip zlib-
     echo "extension=apcu.so" > /usr/local/etc/php/conf.d/apcu.ini && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
     composer global require hirak/prestissimo
+
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \ 
+    && apt-get update \
+    && apt-get install -y nodejs
