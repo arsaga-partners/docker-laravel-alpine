@@ -1,7 +1,7 @@
 FROM php:7.3-fpm-alpine
 MAINTAINER yok
 
-RUN apk --update add libmcrypt-dev autoconf gcc libc-dev make pcre-dev zip zlib-dev git && rm -rf /var/cache/apk/* && \
+RUN apk --update add libmcrypt-dev autoconf gcc libc-dev make pcre-dev zip zlib-dev git nodejs npm && rm -rf /var/cache/apk/* && \
     docker-php-ext-install mbstring && \
     docker-php-ext-install pcntl && \
     docker-php-ext-install pdo_mysql && \
@@ -10,7 +10,3 @@ RUN apk --update add libmcrypt-dev autoconf gcc libc-dev make pcre-dev zip zlib-
     echo "extension=apcu.so" > /usr/local/etc/php/conf.d/apcu.ini && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && \
     composer global require hirak/prestissimo
-
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \ 
-    && apt-get update \
-    && apt-get install -y nodejs
